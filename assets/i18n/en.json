@@ -1,0 +1,19 @@
+{
+    "login": {
+        "title" : "Welcome",
+        "text1" :"Enter your Full Name",
+        "text2" :"Enter your Phone Number",
+        "error1" : "Please Enter your Name.",
+        "error2" : "Please Enter your Phone.",
+        "button" : "Log in",
+        "or": "OR"
+ },
+    "verify" : {
+        "title" : "Verify Phone",
+        "resend" : "Resend Code",
+        "button" : "Verify"
+ },
+    "help" : {
+        "continue" : "Continue"
+    }
+}
