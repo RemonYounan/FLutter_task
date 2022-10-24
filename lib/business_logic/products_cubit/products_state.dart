@@ -9,10 +9,15 @@ class ProductsLoadingState extends ProductsState {}
 
 class ProductFavouriteToggeledState extends ProductsState {}
 
-class ProductsLoadedState extends ProductsState {
-  final List<ProductModel> products;
 
-  ProductsLoadedState({
+class ProductFilterChangedState extends ProductsState {
+   final List<ProductModel> products;
+
+  ProductFilterChangedState({
     required this.products,
   });
+}
+
+
+class ProductsLoadedState extends ProductsState {
 }

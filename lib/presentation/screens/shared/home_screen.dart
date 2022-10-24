@@ -18,7 +18,6 @@ class HomeScreen extends StatelessWidget {
       onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
       child: Scaffold(
         body: Container(
-          height: 100.h,
           width: double.infinity,
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -54,7 +53,10 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: 2.h,
                       ),
-                      const ProductsWidget()
+                      const ProductsWidget(),
+                      SizedBox(
+                        height: 6.h,
+                      ),
                     ],
                   ),
                 ),

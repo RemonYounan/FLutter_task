@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
+
 import 'package:magdsoft_flutter_structure/constants/app_assets.dart';
 import 'package:magdsoft_flutter_structure/data/models/product_model.dart';
-import 'package:magdsoft_flutter_structure/helpers/network.dart';
 import 'package:magdsoft_flutter_structure/presentation/styles/colors.dart';
-import 'package:sizer/sizer.dart';
 
 class ProductMainImageWidget extends StatelessWidget {
   ProductMainImageWidget({

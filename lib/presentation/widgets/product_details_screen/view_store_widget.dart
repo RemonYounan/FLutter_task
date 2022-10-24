@@ -1,11 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:magdsoft_flutter_structure/constants/app_assets.dart';
 import 'package:magdsoft_flutter_structure/presentation/styles/colors.dart';
 import 'package:sizer/sizer.dart';
 
 class ViewStoreWidget extends StatelessWidget {
   const ViewStoreWidget({
+    required this.companyName,
     Key? key,
   }) : super(key: key);
+
+  final String companyName;
+
+  String getImage(String company) {
+    switch (company) {
+      case 'Acer':
+        return AppAssets.acerLogo1;
+      case 'Razer':
+        return AppAssets.razerLogo;
+      case 'Apple':
+        return AppAssets.iosLogo;
+
+      default:
+        return AppAssets.acerLogo1;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +47,7 @@ class ViewStoreWidget extends StatelessWidget {
         child: Row(
           children: [
             Container(
+              height: 9.h,
               width: 14.w,
               decoration: BoxDecoration(
                 color: AppColors.darkerWhite,
@@ -42,7 +61,8 @@ class ViewStoreWidget extends StatelessWidget {
                 ],
               ),
               child: Image.asset(
-                'assets/images/acer-logo.png',
+                getImage(companyName),
+                height: 5.h,
               ),
             ),
             SizedBox(
@@ -53,7 +73,7 @@ class ViewStoreWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Acer Official Store',
+                  '$companyName Official Store',
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
                 SizedBox(

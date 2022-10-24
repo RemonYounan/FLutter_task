@@ -31,7 +31,7 @@ class HomeAppBar extends StatelessWidget {
                   ),
                 ),
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      color: AppColors.black,
+                      color: AppColors.lightBlack,
                     ),
               ),
             ),

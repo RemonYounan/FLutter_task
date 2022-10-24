@@ -26,7 +26,6 @@ class LoginCubit extends Cubit<LoginState> {
   Future<void> verifyPhone(String code) async {
     emit(LoginLoadingState());
     try {
-      CacheHelper.init();
       final requestModel = VerifyRequestModel(code: code, phone: '01111111111');
       final response = await LoginRequest.verifyPhone(requestModel);
       CacheHelper.saveDataSharedPreference(key: 'IS-LOGGED-IN', value: true);

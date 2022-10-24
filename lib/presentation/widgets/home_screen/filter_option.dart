@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:magdsoft_flutter_structure/business_logic/global_cubit/global_cubit.dart';
+import 'package:magdsoft_flutter_structure/business_logic/products_cubit/products_cubit.dart';
 import 'package:magdsoft_flutter_structure/presentation/styles/colors.dart';
 import 'package:sizer/sizer.dart';
 
@@ -21,7 +22,9 @@ class FilterOption extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.h),
       child: InkWell(
         borderRadius: BorderRadius.circular(30),
-        onTap: () {},
+        onTap: () {
+          context.read<ProductsCubit>().getFilteredProducts(title);
+        },
         child: Container(
           height: 52,
           decoration: BoxDecoration(

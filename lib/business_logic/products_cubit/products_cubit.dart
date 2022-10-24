@@ -12,27 +12,29 @@ part 'products_state.dart';
 class ProductsCubit extends Cubit<ProductsState> {
   ProductsCubit() : super(ProductsInitial());
   late List<ProductModel> products;
+  late List<ProductModel> filteredProducts;
+  String selectedFilter = 'All';
 
   Future<void> getProducts() async {
     emit(ProductsLoadingState());
+    selectedFilter = 'All';
     final isConnected = await InternetConnectionCheckerPlus().hasConnection;
     if (isConnected) {
-      final List<ProductModel> products = await GetProducts.getProducts();
-      this.products = products;
+      products = await GetProducts.getProducts();
       final productsToJson =
           products.map((product) => product.tojson()).toList();
       CacheHelper.saveDataSharedPreference(
           key: 'PRODUCTS', value: json.encode(productsToJson));
-      emit(ProductsLoadedState(products: products));
+      emit(ProductsLoadedState());
     } else {
       final productsString =
           await CacheHelper.getDataFromSharedPreference(key: 'PRODUCTS');
       final List productsJson = json.decode(productsString);
-      final List<ProductModel> products = productsJson
+      products = productsJson
           .map((product) => ProductModel.fromJson(product))
           .toList();
-      this.products = products;
-      emit(ProductsLoadedState(products: products));
+
+      emit(ProductsLoadedState());
     }
   }
 
@@ -40,5 +42,18 @@ class ProductsCubit extends Cubit<ProductsState> {
     final product = products.firstWhere((product) => product.id == productId);
     product.isFavorite = !product.isFavorite;
     emit(ProductFavouriteToggeledState());
+  }
+
+  void getFilteredProducts(String filter) async {
+    emit(ProductsLoadingState());
+    selectedFilter = filter;
+    if (filter == 'All') {
+      filteredProducts = products;
+      emit(ProductFilterChangedState(products: products));
+    } else {
+      filteredProducts =
+          products.where((element) => element.company == filter).toList();
+      emit(ProductFilterChangedState(products: filteredProducts));
+    }
   }
 }

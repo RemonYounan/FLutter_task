@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:magdsoft_flutter_structure/data/models/product_model.dart';
 import 'package:magdsoft_flutter_structure/presentation/styles/colors.dart';
 import 'package:magdsoft_flutter_structure/presentation/widgets/button_widget.dart';
+import 'package:magdsoft_flutter_structure/presentation/widgets/toast.dart';
 import 'package:sizer/sizer.dart';
 
 class PriceAndAddToCartWidget extends StatelessWidget {
@@ -45,7 +46,10 @@ class PriceAndAddToCartWidget extends StatelessWidget {
           child: const Text('Add To Cart'),
           size: Size(55.w, 6.h),
           borderRadius: 10,
-          onPressed: () {},
+          onPressed: () {
+            fToast.init(context);
+            showToast('Item added to cart.');
+          },
         ),
       ],
     );

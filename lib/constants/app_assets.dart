@@ -9,7 +9,8 @@ class AppAssets {
   static const googleLogo = '$path/google-logo.png';
   static const homeBannerImage = '$path/banner-image.png';
   static const allLogo = '$path/all-logo.png';
-  static const acerLogo = '$path/acer-logo2.png';
+  static const acerLogo1 = '$path/acer-logo.png';
+  static const acerLogo2 = '$path/acer-logo2.png';
   static const razerLogo = '$path/razer-logo.png';
   static const loadingGif = '$path/loading.gif';
   static const productImage1 = '$path/product-image1.png';

@@ -43,7 +43,9 @@ class ProductDetailsScreen extends StatelessWidget {
                   SizedBox(height: 1.h),
                   ProductMainImageWidget(product: product),
                   SizedBox(height: 4.h),
-                  const ViewStoreWidget(),
+                  ViewStoreWidget(
+                    companyName: product.company,
+                  ),
                   SizedBox(height: 4.h),
                   PriceAndAddToCartWidget(product: product),
                   SizedBox(height: 1.h),

@@ -20,11 +20,12 @@ class FiltersOptions extends StatelessWidget {
           if (state is ProductsLoadingState) {
             return Container();
           } else {
-            final products = context.read<ProductsCubit>().products;
+            final cubit = context.read<ProductsCubit>();
+            final products = cubit.products;
             final filtersSet = products.map((e) => e.company).toList().toSet();
             final icons = [
               AppAssets.allLogo,
-              AppAssets.acerLogo,
+              AppAssets.acerLogo2,
               AppAssets.razerLogo,
               AppAssets.iosLogo,
             ];
@@ -39,7 +40,7 @@ class FiltersOptions extends StatelessWidget {
                 return FilterOption(
                   title: filtersList[index],
                   icon: icons[index],
-                  isSelected: index == 0,
+                  isSelected: filtersList[index] == cubit.selectedFilter,
                 );
               },
             );
