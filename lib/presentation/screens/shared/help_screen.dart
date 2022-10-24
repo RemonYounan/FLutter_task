@@ -1,14 +1,10 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_translate/flutter_translate.dart';
-import 'package:magdsoft_flutter_structure/business_logic/products_cubit/products_cubit.dart';
-import 'package:magdsoft_flutter_structure/presentation/widgets/button_widget.dart';
-import 'package:magdsoft_flutter_structure/presentation/widgets/help_screen/help_item_list_widget.dart';
 import 'package:sizer/sizer.dart';
 
-import 'package:magdsoft_flutter_structure/business_logic/global_cubit/global_cubit.dart';
 import 'package:magdsoft_flutter_structure/presentation/styles/colors.dart';
+import 'package:magdsoft_flutter_structure/presentation/widgets/button_widget.dart';
+import 'package:magdsoft_flutter_structure/presentation/widgets/help_screen/help_item_list_widget.dart';
 
 class HelpScreen extends StatelessWidget {
   const HelpScreen({Key? key}) : super(key: key);
